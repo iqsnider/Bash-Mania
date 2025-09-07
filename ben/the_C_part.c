@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <unistd.h>
 
 int main() {
     printf("Hello, I am C");
 
-    // run shell script (currently loops back to C++)
-    int status = system("./a.out");
+    if (fork())
+        execl("./c_to_rust.sh", "./c_to_rust.sh", NULL);
 
 }
